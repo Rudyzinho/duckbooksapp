@@ -374,8 +374,26 @@ class _ReservationsPageWidgetState extends State<ReservationsPageWidget> {
                                             )),
                                           ),
                                           FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
+                                            onPressed: () async {
+                                              logFirebaseEvent(
+                                                  'RESERVATIONS_DETALHES_BTN_ON_TAP');
+                                              logFirebaseEvent(
+                                                  'Button_navigate_to');
+
+                                              context.pushNamed(
+                                                'CollectionDetailsPage',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType
+                                                            .leftToRight,
+                                                    duration: Duration(
+                                                        milliseconds: 300),
+                                                  ),
+                                                },
+                                              );
                                             },
                                             text: 'Detalhes',
                                             options: FFButtonOptions(

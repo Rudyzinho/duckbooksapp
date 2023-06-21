@@ -605,8 +605,26 @@ class _ConsultationPageWidgetState extends State<ConsultationPageWidget> {
                                     Align(
                                       alignment: AlignmentDirectional(0.0, 1.0),
                                       child: FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
+                                        onPressed: () async {
+                                          logFirebaseEvent(
+                                              'CONSULTATION_PEDIR_EMPRÉSTIMO_BTN_ON_TAP');
+                                          logFirebaseEvent(
+                                              'Button_navigate_to');
+
+                                          context.pushNamed(
+                                            'BorrowReservedPage',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .leftToRight,
+                                                duration:
+                                                    Duration(milliseconds: 300),
+                                              ),
+                                            },
+                                          );
                                         },
                                         text: 'Pedir empréstimo',
                                         options: FFButtonOptions(
@@ -679,8 +697,26 @@ class _ConsultationPageWidgetState extends State<ConsultationPageWidget> {
                                             )),
                                           ),
                                           FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
+                                            onPressed: () async {
+                                              logFirebaseEvent(
+                                                  'CONSULTATION_DETALHES_BTN_ON_TAP');
+                                              logFirebaseEvent(
+                                                  'Button_navigate_to');
+
+                                              context.pushNamed(
+                                                'CollectionDetailsPage',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType
+                                                            .leftToRight,
+                                                    duration: Duration(
+                                                        milliseconds: 300),
+                                                  ),
+                                                },
+                                              );
                                             },
                                             text: 'Detalhes',
                                             options: FFButtonOptions(
@@ -812,8 +848,26 @@ class _ConsultationPageWidgetState extends State<ConsultationPageWidget> {
                                     Align(
                                       alignment: AlignmentDirectional(0.0, 1.0),
                                       child: FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
+                                        onPressed: () async {
+                                          logFirebaseEvent(
+                                              'CONSULTATION_PEDIR_EMPRÉSTIMO_BTN_ON_TAP');
+                                          logFirebaseEvent(
+                                              'Button_navigate_to');
+
+                                          context.pushNamed(
+                                            'BorrowUnreservedPage',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .leftToRight,
+                                                duration:
+                                                    Duration(milliseconds: 300),
+                                              ),
+                                            },
+                                          );
                                         },
                                         text: 'Pedir empréstimo',
                                         options: FFButtonOptions(

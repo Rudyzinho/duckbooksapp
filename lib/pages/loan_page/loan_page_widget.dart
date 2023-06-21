@@ -280,8 +280,26 @@ class _LoanPageWidgetState extends State<LoanPageWidget> {
                                     Align(
                                       alignment: AlignmentDirectional(0.0, 1.0),
                                       child: FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
+                                        onPressed: () async {
+                                          logFirebaseEvent(
+                                              'LOAN_PAGE_PAGE_DEVOLVER_BTN_ON_TAP');
+                                          logFirebaseEvent(
+                                              'Button_navigate_to');
+
+                                          context.pushNamed(
+                                            'ReturnLoanPage',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .leftToRight,
+                                                duration:
+                                                    Duration(milliseconds: 300),
+                                              ),
+                                            },
+                                          );
                                         },
                                         text: 'Devolver',
                                         options: FFButtonOptions(
@@ -353,8 +371,14 @@ class _LoanPageWidgetState extends State<LoanPageWidget> {
                                             )),
                                           ),
                                           FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
+                                            onPressed: () async {
+                                              logFirebaseEvent(
+                                                  'LOAN_PAGE_PAGE_RENOVAR_BTN_ON_TAP');
+                                              logFirebaseEvent(
+                                                  'Button_navigate_to');
+
+                                              context
+                                                  .pushNamed('RenewLoanPage');
                                             },
                                             text: 'Renovar',
                                             options: FFButtonOptions(

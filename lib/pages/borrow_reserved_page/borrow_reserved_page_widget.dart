@@ -6,28 +6,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'return_loan_page_model.dart';
-export 'return_loan_page_model.dart';
+import 'borrow_reserved_page_model.dart';
+export 'borrow_reserved_page_model.dart';
 
-class ReturnLoanPageWidget extends StatefulWidget {
-  const ReturnLoanPageWidget({Key? key}) : super(key: key);
+class BorrowReservedPageWidget extends StatefulWidget {
+  const BorrowReservedPageWidget({Key? key}) : super(key: key);
 
   @override
-  _ReturnLoanPageWidgetState createState() => _ReturnLoanPageWidgetState();
+  _BorrowReservedPageWidgetState createState() =>
+      _BorrowReservedPageWidgetState();
 }
 
-class _ReturnLoanPageWidgetState extends State<ReturnLoanPageWidget> {
-  late ReturnLoanPageModel _model;
+class _BorrowReservedPageWidgetState extends State<BorrowReservedPageWidget> {
+  late BorrowReservedPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ReturnLoanPageModel());
+    _model = createModel(context, () => BorrowReservedPageModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'ReturnLoanPage'});
+        parameters: {'screen_name': 'BorrowReservedPage'});
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -59,13 +60,13 @@ class _ReturnLoanPageWidgetState extends State<ReturnLoanPageWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              logFirebaseEvent('RETURN_LOAN_arrow_back_ios_rounded_ICN_O');
+              logFirebaseEvent('BORROW_RESERVED_arrow_back_ios_rounded_I');
               logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),
           title: Text(
-            'Devolver Obra',
+            'Pedir Empréstimo',
             style: FlutterFlowTheme.of(context).displayLarge.override(
                   fontFamily: FlutterFlowTheme.of(context).displayLargeFamily,
                   color: FlutterFlowTheme.of(context).alternate,
@@ -197,7 +198,7 @@ class _ReturnLoanPageWidgetState extends State<ReturnLoanPageWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 32.0),
                 child: Card(
                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                  color: FlutterFlowTheme.of(context).primary,
+                  color: FlutterFlowTheme.of(context).secondary,
                   elevation: 4.0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
@@ -206,42 +207,79 @@ class _ReturnLoanPageWidgetState extends State<ReturnLoanPageWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
                     child: Text(
-                      'Previsão de Devolução\n12/06/2023',
+                      'Previsão de Disponibilidade\n12/06/2023',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyLarge,
                     ),
                   ),
                 ),
               ),
-              FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
-                },
-                text: 'Informar devolução',
-                icon: Icon(
-                  Icons.photo_camera_back,
-                  size: 24.0,
-                ),
-                options: FFButtonOptions(
-                  height: 40.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                  iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
-                  color: FlutterFlowTheme.of(context).alternate,
-                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).titleSmallFamily,
-                        color: FlutterFlowTheme.of(context).tertiary,
-                        useGoogleFonts: GoogleFonts.asMap().containsKey(
-                            FlutterFlowTheme.of(context).titleSmallFamily),
-                      ),
-                  elevation: 3.0,
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1.0,
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                child: FFButtonWidget(
+                  onPressed: () {
+                    print('Button pressed ...');
+                  },
+                  text: 'Solicitar Empréstimo',
+                  icon: Icon(
+                    Icons.connect_without_contact_rounded,
+                    size: 32.0,
                   ),
-                  borderRadius: BorderRadius.circular(8.0),
-                  hoverColor: FlutterFlowTheme.of(context).accent3,
+                  options: FFButtonOptions(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
+                    color: FlutterFlowTheme.of(context).alternate,
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleSmallFamily,
+                          color: FlutterFlowTheme.of(context).tertiary,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).titleSmallFamily),
+                        ),
+                    elevation: 3.0,
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                    hoverColor: FlutterFlowTheme.of(context).accent3,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                child: FFButtonWidget(
+                  onPressed: () {
+                    print('Button pressed ...');
+                  },
+                  text: 'Cancelar Reserva',
+                  icon: Icon(
+                    Icons.cancel_rounded,
+                    size: 15.0,
+                  ),
+                  options: FFButtonOptions(
+                    height: 40.0,
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                    color: FlutterFlowTheme.of(context).primary,
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleSmallFamily,
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).titleSmallFamily),
+                        ),
+                    elevation: 3.0,
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
                 ),
               ),
             ],

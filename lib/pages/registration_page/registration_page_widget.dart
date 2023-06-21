@@ -80,8 +80,8 @@ class _RegistrationPageWidgetState extends State<RegistrationPageWidget> {
                   },
                   child: FaIcon(
                     FontAwesomeIcons.questionCircle,
-                    color: Color(0xFF006C7A),
-                    size: 24.0,
+                    color: FlutterFlowTheme.of(context).info,
+                    size: 32.0,
                   ),
                 ),
               ),
@@ -476,7 +476,7 @@ class _RegistrationPageWidgetState extends State<RegistrationPageWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 64.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 64.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       logFirebaseEvent('REGISTRATION_CADASTRAR_BTN_ON_TAP');

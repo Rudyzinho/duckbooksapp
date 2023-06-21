@@ -6,28 +6,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'return_loan_page_model.dart';
-export 'return_loan_page_model.dart';
+import 'renew_loan_page_model.dart';
+export 'renew_loan_page_model.dart';
 
-class ReturnLoanPageWidget extends StatefulWidget {
-  const ReturnLoanPageWidget({Key? key}) : super(key: key);
+class RenewLoanPageWidget extends StatefulWidget {
+  const RenewLoanPageWidget({Key? key}) : super(key: key);
 
   @override
-  _ReturnLoanPageWidgetState createState() => _ReturnLoanPageWidgetState();
+  _RenewLoanPageWidgetState createState() => _RenewLoanPageWidgetState();
 }
 
-class _ReturnLoanPageWidgetState extends State<ReturnLoanPageWidget> {
-  late ReturnLoanPageModel _model;
+class _RenewLoanPageWidgetState extends State<RenewLoanPageWidget> {
+  late RenewLoanPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ReturnLoanPageModel());
+    _model = createModel(context, () => RenewLoanPageModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'ReturnLoanPage'});
+        parameters: {'screen_name': 'RenewLoanPage'});
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -59,13 +59,13 @@ class _ReturnLoanPageWidgetState extends State<ReturnLoanPageWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              logFirebaseEvent('RETURN_LOAN_arrow_back_ios_rounded_ICN_O');
+              logFirebaseEvent('RENEW_LOAN_arrow_back_ios_rounded_ICN_ON');
               logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),
           title: Text(
-            'Devolver Obra',
+            'Renovar Empréstimo',
             style: FlutterFlowTheme.of(context).displayLarge.override(
                   fontFamily: FlutterFlowTheme.of(context).displayLargeFamily,
                   color: FlutterFlowTheme.of(context).alternate,
@@ -217,9 +217,9 @@ class _ReturnLoanPageWidgetState extends State<ReturnLoanPageWidget> {
                 onPressed: () {
                   print('Button pressed ...');
                 },
-                text: 'Informar devolução',
+                text: 'Renovar 1/3',
                 icon: Icon(
-                  Icons.photo_camera_back,
+                  Icons.repeat,
                   size: 24.0,
                 ),
                 options: FFButtonOptions(

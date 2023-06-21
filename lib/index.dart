@@ -11,3 +11,11 @@ export '/pages/registration_page/registration_page_widget.dart'
 export '/pages/help_page/help_page_widget.dart' show HelpPageWidget;
 export '/pages/return_loan_page/return_loan_page_widget.dart'
     show ReturnLoanPageWidget;
+export '/pages/renew_loan_page/renew_loan_page_widget.dart'
+    show RenewLoanPageWidget;
+export '/pages/borrow_reserved_page/borrow_reserved_page_widget.dart'
+    show BorrowReservedPageWidget;
+export '/pages/borrow_unreserved_page/borrow_unreserved_page_widget.dart'
+    show BorrowUnreservedPageWidget;
+export '/pages/collection_details_page/collection_details_page_widget.dart'
+    show CollectionDetailsPageWidget;

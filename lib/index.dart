@@ -19,3 +19,14 @@ export '/pages/borrow_unreserved_page/borrow_unreserved_page_widget.dart'
     show BorrowUnreservedPageWidget;
 export '/pages/collection_details_page/collection_details_page_widget.dart'
     show CollectionDetailsPageWidget;
+export '/pages/register_loan_page/register_loan_page_widget.dart'
+    show RegisterLoanPageWidget;
+export '/pages/register_book/register_book_widget.dart' show RegisterBookWidget;
+export '/pages/edit_book_page/edit_book_page_widget.dart'
+    show EditBookPageWidget;
+export '/pages/users_validation_page/users_validation_page_widget.dart'
+    show UsersValidationPageWidget;
+export '/pages/edit_users_page/edit_users_page_widget.dart'
+    show EditUsersPageWidget;
+export '/pages/contact_users_page/contact_users_page_widget.dart'
+    show ContactUsersPageWidget;

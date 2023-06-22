@@ -138,6 +138,36 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'CollectionDetailsPage',
               path: 'collectionDetailsPage',
               builder: (context, params) => CollectionDetailsPageWidget(),
+            ),
+            FFRoute(
+              name: 'RegisterLoanPage',
+              path: 'registerLoanPage',
+              builder: (context, params) => RegisterLoanPageWidget(),
+            ),
+            FFRoute(
+              name: 'RegisterBook',
+              path: 'registerBook',
+              builder: (context, params) => RegisterBookWidget(),
+            ),
+            FFRoute(
+              name: 'EditBookPage',
+              path: 'editBookPage',
+              builder: (context, params) => EditBookPageWidget(),
+            ),
+            FFRoute(
+              name: 'UsersValidationPage',
+              path: 'usersValidationPage',
+              builder: (context, params) => UsersValidationPageWidget(),
+            ),
+            FFRoute(
+              name: 'EditUsersPage',
+              path: 'editUsersPage',
+              builder: (context, params) => EditUsersPageWidget(),
+            ),
+            FFRoute(
+              name: 'ContactUsersPage',
+              path: 'contactUsersPage',
+              builder: (context, params) => ContactUsersPageWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

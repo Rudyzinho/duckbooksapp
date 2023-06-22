@@ -47,7 +47,7 @@ class _HelpPageWidgetState extends State<HelpPageWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).accent2,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -56,7 +56,7 @@ class _HelpPageWidgetState extends State<HelpPageWidget> {
             buttonSize: 60.0,
             icon: Icon(
               Icons.arrow_back_ios_rounded,
-              color: FlutterFlowTheme.of(context).primary,
+              color: FlutterFlowTheme.of(context).accent3,
               size: 30.0,
             ),
             onPressed: () async {
@@ -67,11 +67,11 @@ class _HelpPageWidgetState extends State<HelpPageWidget> {
           ),
           title: Text(
             'Dúvidas - Validação',
-            style: FlutterFlowTheme.of(context).headlineLarge.override(
-                  fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
-                  color: FlutterFlowTheme.of(context).tertiary,
+            style: FlutterFlowTheme.of(context).displayLarge.override(
+                  fontFamily: FlutterFlowTheme.of(context).displayLargeFamily,
+                  color: FlutterFlowTheme.of(context).alternate,
                   useGoogleFonts: GoogleFonts.asMap().containsKey(
-                      FlutterFlowTheme.of(context).headlineLargeFamily),
+                      FlutterFlowTheme.of(context).displayLargeFamily),
                 ),
           ),
           actions: [],

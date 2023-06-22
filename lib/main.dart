@@ -135,11 +135,11 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
-              size: 20.0,
+              size: 18.0,
             ),
             activeIcon: Icon(
               Icons.home,
-              size: 24.0,
+              size: 22.0,
             ),
             label: 'Home',
             tooltip: '',
